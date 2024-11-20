@@ -1,0 +1,24 @@
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-icon slot="icon-only" ios="arrow-back-outline" md="arrow-back-outline"></ion-icon>
+    <ion-title>สมาชิกทั้งหมด</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" class="ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="loadDataMen($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-item *ngFor="let show of member">
+    <ion-avatar slot="start">
+      <img src="https://tse1.mm.bing.net/th?id=OIP.8t-aCGxTzxFQWYBDUZW-iAHaHa&pid=Api&P=0&h=180" alt="">
+    </ion-avatar>
+    <ion-label>
+      {{ show.id_stu }} {{ show.name }}
+    </ion-label>
+
+    <ion-button slot="end" color="warning" (click)="edit(show)">แก้ไข</ion-button>
+    <ion-button slot="end" color="danger" (click)="delMember(show.id)">ลบ</ion-button>
+  </ion-item>
+</ion-content>

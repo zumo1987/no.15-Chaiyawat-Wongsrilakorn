@@ -1,0 +1,7 @@
+{
+  "name": "APPAPI",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
